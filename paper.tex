@@ -32,8 +32,8 @@
 \titlerunning{Power of unary oritatami cotranscriptional folding}
 \author{
 Szil\'{a}rd Zsolt Fazekas\inst{1} \and 
-Kohei Maruyama\thanks{Primary corresponding author (\email{k.maruyama@uec.ac.jp})} \and
-Reoto Morita \and \\
+Kohei Maruyama\inst{2}\thanks{Primary corresponding author (\email{k.maruyama@uec.ac.jp})} \and
+Reoto Morita\inst{2} \and \\
 Shinnosuke Seki\inst{2}\thanks{Secondary corresponding author (\email{s.seki@uec.ac.jp})}
 }
 \institute{
@@ -43,7 +43,7 @@ Graduate School of Engineering Science,
 %\email{szilard.fazekas@ie.akita-u.ac.jp}
 \and
 The University of Electro-Communications, 
-Graduate School of Informatics and Engineering, 
+%Graduate School of Informatics and Engineering, 
 1-5-1 Chofugaoka, Chofu, Tokyo, 1828585, Japan \\
 }
 
@@ -281,37 +281,62 @@ Give an upper bound on the length of a transcript of a delay-$\delta$, arity-$\a
   \end{center}
 \end{figure}
 
-\begin{figure}[tb]
+%\begin{figure}[tb]
+%\centering
+%\begin{tikzpicture}
+%
+%\node (origin) at (0, 0) {};
+%
+%\draw[-latex] (origin) -- ++(0:10) node[below] {$\delta$}; 
+%\node at (2, -0.2) {1};
+%\node at (4, -0.2) {2 and 3};
+%\node at (6, -0.2) {4 and larger}; 
+%\draw[-latex] (origin) -- ++(90:5) node[left] {$\alpha$}; 
+%\node at (-0.2, 1) {1};
+%\node at (-0.2, 2) {2};
+%\node at (-0.2, 3) {3};
+%\node at (-0.2, 4) {4};
+%
+%%Results
+%\node at (2, 4) {$3n(n{+}1){+}1$};
+%\node at (2, 3) {$4n{+}14$};
+%\node at (2, 2.2) {$\infty$ but zigzag after};
+%\node at (2, 1.8) {$(27n^2{+}9n{+}1)$-th bead};
+%\node at (2, 1) {$10n$ \cite{DHOPRSST2018}};
+%
+%\node at (4, 1) {$3n^2{+}4n{+}1$};
+%
+%\end{tikzpicture}
+%
+%\caption{Upper bounds on the length of a conformation foldable by a deterministic unary oritatami system at delay $\delta$ and arity $\alpha$.
+%At any combination of delay and arity without anything written, no upper bound is known yet.
+%}
+%\label{fig:summary}
+%\end{figure}
+
+\begin{table}[tb]
 \centering
-\begin{tikzpicture}
-
-\node (origin) at (0, 0) {};
-
-\draw[-latex] (origin) -- ++(0:10) node[below] {$\delta$}; 
-\node at (2, -0.2) {1};
-\node at (4, -0.2) {2 and 3};
-\node at (6, -0.2) {4 and larger}; 
-\draw[-latex] (origin) -- ++(90:5) node[left] {$\alpha$}; 
-\node at (-0.2, 1) {1};
-\node at (-0.2, 2) {2};
-\node at (-0.2, 3) {3};
-\node at (-0.2, 4) {4};
-
-%Results
-\node at (2, 4) {$3n(n{+}1){+}1$};
-\node at (2, 3) {$4n{+}14$};
-\node at (2, 2.2) {$\infty$ but zigzag after};
-\node at (2, 1.8) {$(27n^2{+}9n{+}1)$-th bead};
-\node at (2, 1) {$10n$ \cite{DHOPRSST2018}};
-
-\node at (4, 1) {$3n^2{+}4n{+}1$};
-
-\end{tikzpicture}
 \caption{Upper bounds on the length of a conformation foldable by a deterministic unary oritatami system at delay $\delta$ and arity $\alpha$.
 At any combination of delay and arity without anything written, no upper bound is known yet.
 }
 \label{fig:summary}
-\end{figure}
+\begin{tabular}{c | c | c | c}
+$\alpha \backslash \delta$ & 1 & 2 and 3 & 4 and larger \\ \hline
+1 & $10n$ \cite{DHOPRSST2018} & $3n^2{+}4n{+}1$ (Theorem \ref{thm:d23a1})& \\ \hline
+2 & 
+\begin{tabular}{c}
+$\infty$ but zigzag after\\
+$(27n^2{+}9n{+}1)$-th bead\\
+(Theorem \ref{ttt_inf_d1a2})
+\end{tabular}
+ & & \\ \hline
+3 & $4n{+}14$ (Theorem \ref{ttt_inf_d1a3})& & \\ \hline
+4 & $3n(n{+}1){+}1$ (Theorem \ref{ttt_inf_d1a4}) & & \\ \hline
+
+ 
+\end{tabular}
+\end{table}
+
 In this paper, we will solve this problem  completely at delay 1 and partially at arity 1 in Sect.~\ref{sect:upper}. 
 At delay 1, we will provide a quadratic upper bound $3n(n+1)+1$ for the case of arity being 4, while a linear upper bound $4n+14$ for arity 3. 
 At the delay 1 and arity 2, one infinite structure turns out to be foldable deterministically, which is the zigzag conformation shown in Fig.~\ref{TTT_zigzag}. 
